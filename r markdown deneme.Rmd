@@ -1,0 +1,26 @@
+---
+title: "R markdown deneme"
+output: pdf_document
+date: "2025-10-06"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+eskisehir <- data.frame(
+  district   = c("Odunpazari", "Tepebasi", "Sivrihisar", "Cifteler", "Seyitgazi"),
+  population = c(426581, 394734, 20258, 14814,12878))
+
+```
+```{r}
+install.packages('ggplot2')
+library(ggplot2)
+```
+. Please draw a boxplot to visualize the population of districts (20 pts).
+```{r}
+ggplot(eskisehir,aes(x=district,y=population,fill=district))+
+  geom_bar(stat="identity")
+```
+
